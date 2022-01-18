@@ -1,6 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todos_riverpod/data/repositories/todo_repository.dart';
+import 'package:todos_riverpod/logic/notifiers/todo_notifier.dart';
+import 'package:todos_riverpod/logic/state/todo_state.dart';
 
-final todoListFuture =
-    FutureProvider((ref) async => await TodoRepositoy().getTodos());
+final todoRepositoryProvider =
+    Provider<TodoRepositoy>((ref) => TodoRepositoy());
 
+final todoNotifierProvider = StateNotifierProvider<TodoNotifier, TodoState>(
+    (ref) => TodoNotifier(ref.watch(todoRepositoryProvider)));

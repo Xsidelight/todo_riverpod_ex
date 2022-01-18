@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:todos_riverpod/core/constants.dart';
 import 'package:todos_riverpod/data/models/todo.dart';
 
