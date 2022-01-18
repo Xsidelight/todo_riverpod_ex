@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:todos_riverpod/core/constants.dart';
 import 'package:todos_riverpod/data/models/todo.dart';
 
@@ -14,6 +15,15 @@ class TodoRepositoy {
         _todoList.add(todoModel);
       });
       return _todoList;
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
+
+  Future<void> updateTodo(Todo todo) async {
+    final _body = todo.toJson();
+    try {
+      _dio.put('$baseUrl/update-todo', data: _body);
     } catch (e) {
       throw Exception(e);
     }
