@@ -27,6 +27,13 @@ class HomeScreen extends StatelessWidget {
                 arguments: todos[index],
               ),
               title: Text(todos[index].todo!),
+              trailing: CircleAvatar(
+                backgroundColor:
+                    todos[index].isDone! ? Colors.green : Colors.grey,
+                child: const Icon(
+                  Icons.done,
+                ),
+              ),
             ),
             itemCount: todos.length,
           ),
