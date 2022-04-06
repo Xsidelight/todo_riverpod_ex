@@ -4,7 +4,7 @@ import 'package:todos_riverpod/logic/notifiers/todo_notifier.dart';
 import 'package:todos_riverpod/logic/state/todo_state.dart';
 
 final todoRepositoryProvider =
-    Provider<TodoRepositoy>((ref) => TodoRepositoy());
+    Provider<TodoRepository>((ref) => TodoRepository());
 
 final todoNotifierProvider = StateNotifierProvider<TodoNotifier, TodoState>(
     (ref) => TodoNotifier(ref.watch(todoRepositoryProvider)));

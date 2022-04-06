@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todos_riverpod/data/models/todo.dart';
 import 'package:todos_riverpod/data/repositories/todo_repository.dart';
 
-final todosRepository = Provider((ref) => TodoRepositoy());
+final todosRepository = Provider((ref) => TodoRepository());
 
 class EditTodoWidget extends ConsumerStatefulWidget {
   final Todo todo;
@@ -74,6 +74,7 @@ class _EditTodoWidgetState extends ConsumerState<EditTodoWidget> {
                   } else if (double.tryParse(val) == null) {
                     return 'ID should be number';
                   }
+                  return null;
                 },
               ),
               const SizedBox(
@@ -101,6 +102,7 @@ class _EditTodoWidgetState extends ConsumerState<EditTodoWidget> {
                   if (val == null || val.isEmpty) {
                     return 'Enter Valid Value';
                   }
+                  return null;
                 },
               ),
               const SizedBox(
@@ -128,6 +130,7 @@ class _EditTodoWidgetState extends ConsumerState<EditTodoWidget> {
                   if (val == null) {
                     return 'Enter Valid Value';
                   }
+                  return null;
                 },
               ),
               const SizedBox(

@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:todos_riverpod/core/constants.dart';
 import 'package:todos_riverpod/data/models/todo.dart';
 
-class TodoRepositoy {
+class TodoRepository {
   final Dio _dio = Dio();
 
   Future<List<Todo>> getTodos() async {

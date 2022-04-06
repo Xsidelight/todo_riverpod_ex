@@ -7,7 +7,7 @@ class TodoNotifier extends StateNotifier<TodoState> {
     getTodoList();
   }
 
-  final TodoRepositoy _todoRepositoy;
+  final TodoRepository _todoRepositoy;
 
   Future<void> getTodoList() async {
     try {
